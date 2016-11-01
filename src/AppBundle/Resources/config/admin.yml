@@ -1,0 +1,21 @@
+services:
+    app.admin.monster:
+        class: AppBundle\Admin\MonsterAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Monster" }
+        arguments:
+            - ~
+            - AppBundle\Entity\Monster
+            - ~
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
+    app.admin.monster_race:
+        class: AppBundle\Admin\MonsterRaceAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Monster Race" }
+        arguments:
+            - ~
+            - AppBundle\Entity\MonsterRace
+            - ~
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
