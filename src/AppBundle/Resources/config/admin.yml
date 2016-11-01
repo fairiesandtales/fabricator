@@ -2,20 +2,21 @@ services:
     app.admin.monster:
         class: AppBundle\Admin\MonsterAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Monster" }
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Monsters" }
         arguments:
             - ~
             - AppBundle\Entity\Monster
             - ~
         calls:
             - [ setTranslationDomain, [AppBundle]]
-    app.admin.monster_race:
-        class: AppBundle\Admin\MonsterRaceAdmin
+
+    app.admin.monster_class:
+        class: AppBundle\Admin\MonsterClassAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Monster Race" }
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Monster Classes" }
         arguments:
             - ~
-            - AppBundle\Entity\MonsterRace
+            - AppBundle\Entity\MonsterClass
             - ~
         calls:
             - [ setTranslationDomain, [AppBundle]]

@@ -22,7 +22,7 @@ class MonsterAdmin extends AbstractAdmin
             ->add('deviation')
             ->add('defense')
             ->add('skill')
-            ->add('race')
+            ->add('monsterClass')
         ;
     }
 
@@ -33,7 +33,7 @@ class MonsterAdmin extends AbstractAdmin
             ->add('id')
             ->add('name')
             ->add('level')
-            ->add('race')
+            ->add('monsterClass')
         ;
     }
 
@@ -50,7 +50,7 @@ class MonsterAdmin extends AbstractAdmin
             ->add('deviation')
             ->add('defense')
             ->add('skill')
-            ->add('race')
+            ->add('monsterClass')
         ;
     }
 
@@ -67,7 +67,7 @@ class MonsterAdmin extends AbstractAdmin
             ->add('deviation')
             ->add('defense')
             ->add('skill')
-            ->add('race')
+            ->add('monsterClass')
         ;
     }
 }

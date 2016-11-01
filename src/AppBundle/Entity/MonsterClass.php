@@ -6,12 +6,12 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * MonsterRace
+ * MonsterClass
  *
- * @ORM\Table(name="monster_race")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\MonsterRaceRepository")
+ * @ORM\Table(name="monster_class")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\MonsterClassRepository")
  */
-class MonsterRace
+class MonsterClass
 {
     /**
      * @var int
@@ -45,7 +45,7 @@ class MonsterRace
      *
      * @param string $name
      *
-     * @return MonsterRace
+     * @return MonsterClass
      */
     public function setName($name)
     {

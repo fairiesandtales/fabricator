@@ -78,11 +78,11 @@ class Monster
     private $skill;
 
     /**
-     * @var MonsterRace
+     * @var MonsterClass
      *
-     * @ORM\ManyToOne(targetEntity="MonsterRace", fetch="EXTRA_LAZY")
+     * @ORM\ManyToOne(targetEntity="MonsterClass", fetch="EXTRA_LAZY")
      */
-    private $race;
+    private $monsterClass;
 
 
     /**
@@ -289,26 +289,30 @@ class Monster
     }
 
     /**
-     * Set race.
+     * Set monsterClass.
      *
-     * @param MonsterRace $race
+     * @param MonsterClass $monsterClass
      *
      * @return Monster
      */
-    public function setRace(MonsterRace $race)
+    public function setMonsterClass(MonsterClass $monsterClass)
     {
-        $this->race = $race;
+        $this->monsterClass = $monsterClass;
 
         return $this;
     }
 
     /**
-     * Get race.
+     * Get monsterClass.
      *
-     * @return MonsterRace
+     * @return MonsterClass
      */
-    public function getRace()
+    public function getMonsterClass()
     {
-        return $this->race;
+        return $this->monsterClass;
+    }
+
+    public function __toString() {
+        return $this->name;
     }
 }
