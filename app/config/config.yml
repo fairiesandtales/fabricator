@@ -77,3 +77,12 @@ sonata_block:
 sonata_admin:
     title:      Fairies & Tales
     title_logo: img/logo.png
+    options:
+        form_type:            horizontal
+        html5_validate:       true
+        title_mode:           both
+        lock_protection:      true
+        use_select2:          true
+        use_stickyforms:      false
+        use_icheck:           true
+        use_bootlint:         false
