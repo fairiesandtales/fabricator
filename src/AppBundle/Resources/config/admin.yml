@@ -2,7 +2,7 @@ services:
     app.admin.monster:
         class: AppBundle\Admin\MonsterAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Monsters" }
+            - { name: sonata.admin, manager_type: orm, group: "NPC", label: "Monsters" }
         arguments:
             - ~
             - AppBundle\Entity\Monster
@@ -13,10 +13,32 @@ services:
     app.admin.monster_class:
         class: AppBundle\Admin\MonsterClassAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Monster Classes" }
+            - { name: sonata.admin, manager_type: orm, group: "NPC", label: "Monster Classes" }
         arguments:
             - ~
             - AppBundle\Entity\MonsterClass
+            - ~
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
+
+    app.admin.weapon:
+        class: AppBundle\Admin\WeaponAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Items", label: "Weapons" }
+        arguments:
+            - ~
+            - AppBundle\Entity\Weapon
+            - ~
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
+
+    app.admin.weapon_class:
+        class: AppBundle\Admin\WeaponClassAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Items", label: "Weapon Classes" }
+        arguments:
+            - ~
+            - AppBundle\Entity\WeaponClass
             - ~
         calls:
             - [ setTranslationDomain, [AppBundle]]
