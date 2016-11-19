@@ -1,0 +1,7 @@
+services:
+    app.command.essentials_dump:
+        class: AppBundle\Command\EssentialsDumpCommand
+        arguments:
+            - "@doctrine.orm.entity_manager"
+        tags:
+            - { name: console.command }
