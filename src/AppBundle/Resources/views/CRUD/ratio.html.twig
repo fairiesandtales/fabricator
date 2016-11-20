@@ -1,0 +1,14 @@
+{% extends 'SonataAdminBundle:CRUD:base_list_field.html.twig' %}
+
+{% block field%}
+    {% if value is empty %}
+        &nbsp;
+    {% else %}
+        {% if value < 0.9 or value > 1.1 %}
+            {% set ratioClass = 'text-danger' %}
+        {% else %}
+            {% set ratioClass = 'text-success' %}
+        {% endif %}
+        <span class="{{ ratioClass }}">{{ value|round(2) }}</span>
+    {% endif %}
+{% endblock %}

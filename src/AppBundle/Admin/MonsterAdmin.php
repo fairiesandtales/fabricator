@@ -51,6 +51,10 @@ class MonsterAdmin extends AbstractAdmin
             ->add('defense')
             ->add('skill')
             ->add('monsterClass')
+            ->add('baseExperience')
+            ->add('ratio', null, array(
+                'template'   => "AppBundle:CRUD:ratio.html.twig",
+            ))
         ;
     }
 

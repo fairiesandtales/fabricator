@@ -312,6 +312,19 @@ class Monster
         return $this->monsterClass;
     }
 
+    public function getRatio() {
+        $health = $this->getHealth() * 1.5;
+        $defense = $this->getDefense() * 1.3;
+        $minDamage = ($this->getDamage() - $this->getDeviation()) * 0.2;
+        $maxDamage = ($this->getDamage() + $this->getDeviation()) * 1.2;
+
+        return ($health + $minDamage + $maxDamage + $defense) / $this->getLevel() / 9;
+    }
+
+    public function getBaseExperience() {
+        return round(5 * $this->getRatio() * $this->getLevel());
+    }
+
     public function __toString() {
         return $this->name;
     }
